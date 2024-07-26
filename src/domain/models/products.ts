@@ -1,17 +1,33 @@
+import { Request } from 'express';
 export interface Product {
-    productId: number;
-    productName: string;
-    price: number;
-    productImage: string;
-    brand: string;
+    productName?: string;
+    price?: number ;
+    productImage?: string;
+    brand?: string;
+    categoryId ?: number |string
+ 
   }
   
  export interface Category {
-    categoryId: number;
-    categoryName: string;
-    products: Product[];
+    categoryId ?: number ;
+    categoryName ?: string ;
+    products ?: Product[] | [];
   }
 
  export interface Status {
-    status : number
+   Items?: never[];
+    status : number;
+     categoryData ?: Category[] | null;
+     productData ?: Category[] | null;
+     message ?: string;
   }
+  export interface RequestBody {
+   categoryName: string;
+   products: Product[];
+   productName: string;
+   price: number;
+   productImage: string;
+   brand: string;
+   categoryId: number;
+ }
+ 

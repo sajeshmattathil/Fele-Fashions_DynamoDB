@@ -7,7 +7,9 @@ const app = express();
 import cors from "cors";
 import productRouter from "./infrastructure/routers/productRouter";
 
-const allowedOrigins = ["http://localhost:5173"];
+
+
+const allowedOrigins = ["http://localhost:5000"];
 app.use(
   cors({
     origin: function (origin, callback) {
