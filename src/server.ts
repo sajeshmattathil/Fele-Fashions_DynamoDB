@@ -9,16 +9,9 @@ import productRouter from "./infrastructure/routers/productRouter";
 
 
 
-const allowedOrigins = ["http://localhost:5000"];
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: '*', 
     credentials: false,
   })
 );

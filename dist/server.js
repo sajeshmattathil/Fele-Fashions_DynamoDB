@@ -11,16 +11,8 @@ const express_1 = __importDefault(require("express"));
 const app = (0, express_1.default)();
 const cors_1 = __importDefault(require("cors"));
 const productRouter_1 = __importDefault(require("./infrastructure/routers/productRouter"));
-const allowedOrigins = ["http://localhost:5000"];
 app.use((0, cors_1.default)({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
-        }
-        else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
+    origin: '*',
     credentials: false,
 }));
 app.use(express_1.default.json());
